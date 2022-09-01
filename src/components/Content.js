@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import illustration from '../Illustration.svg'
+import illustration from '../assets/Illustration.svg'
 
 function Content() {
     return (
@@ -15,7 +15,9 @@ function Content() {
                         words.
                         <br />
                     </h1>
-                    <button className="text-2xl bg-memorize rounded-lg p-3 mt-2 text-body hover:bg-body hover:text-memorize transition duration-100  delay-75"> <Link to="/collections">Learn more.</Link> </button>
+                    <button className="text-2xl bg-memorize rounded-lg p-3 mt-2 text-body hover:bg-body hover:text-memorize transition duration-100  delay-75">
+                        <Link to="/collections">Learn more.</Link>
+                    </button>
                 </div>
                 <div className="mx-20 min-w-min ">
                     <img src={illustration} className='bg-body'></img>
