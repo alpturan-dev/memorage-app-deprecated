@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     colors: {
       'body': "#CCBDE6",
-      'memorize': "#006DCD"
+      'memorize': "#006DCD",
+      'white': "#fff"
     },
     extend: {},
   },
