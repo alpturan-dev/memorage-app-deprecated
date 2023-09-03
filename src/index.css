@@ -8,11 +8,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #dce2fa;
-  color: #424656;
+  background-color: rgb(226 232 240);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.font-ubuntu {
+  font-family: "Ubuntu", sans-serif;
 }

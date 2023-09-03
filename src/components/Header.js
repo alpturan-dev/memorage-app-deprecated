@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import logo from '../assets/brand.svg'
 import menu from '../assets/menu-icon.svg'
 import close from '../assets/menu-close.svg'
@@ -9,10 +9,14 @@ function Header() {
 
     const [isNavOpen, setIsNavOpen] = useState(false);
 
+    useEffect(() => {
+        console.log("Header refresh!");
+    }, [])
+
     return (
-        <div className='flex h-16 justify-between py-10 px-36 items-center'>
-            <a href='#' className='text-3xl flex items-center'>
-                <img src={logo} className='w-5 mr-2'></img>
+        <div className='flex h-16 justify-between py-10 lg:px-36 px-10 items-center'>
+            <a href='/' className='text-3xl flex items-center'>
+                <img src={logo} alt={logo} className='w-5 mr-2' />
                 Memorage
             </a>
             <div className='flex flex-row'>
@@ -22,11 +26,11 @@ function Header() {
                 }}>
                     <img src={menu} alt="" className='w-10' />
                 </div>
-                <ul className='text-xl hidden lg:flex flex-row items-center justify-between'>
+                <ul className='text-xl hidden lg:flex flex-row items-center'>
                     <li className='mx-3 hover:underline'><Link to="/">Home</Link></li>
                     <li className='mx-3 hover:underline'><Link to="/collections">Collections</Link></li>
-                    <li className='mx-3 hover:underline'><a href="#">About</a></li>
-                    <li className='mx-3 hover:underline'><a href="#">Contact</a></li>
+                    <li className='mx-3 hover:underline'><a href="/">About</a></li>
+                    <li className='mx-3 hover:underline'><a href="/">Contact</a></li>
                 </ul>
             </div>
             {isNavOpen && (
@@ -37,14 +41,13 @@ function Header() {
                     <ul className='flex flex-col justify-center text-base items-center mt-2'>
                         <li className='mx-3 hover:underline'><Link to="/">Home</Link></li>
                         <li className='mx-3 hover:underline'><Link to="/collections">Collections</Link></li>
-                        <li className='mx-3 hover:underline'><a href="#">About</a></li>
-                        <li className='mx-3 hover:underline'><a href="#">Contact</a></li>
+                        <li className='mx-3 hover:underline'><a href="/">About</a></li>
+                        <li className='mx-3 hover:underline'><a href="/">Contact</a></li>
                     </ul>
                 </div>
             )}
         </div>
-
     )
 }
 
-export default Header
+export default React.memo(Header)

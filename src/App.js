@@ -1,4 +1,3 @@
-import './App.css';
 import {
   BrowserRouter,
   Routes,
@@ -7,15 +6,22 @@ import {
 import Dashboard from './pages/Dashboard';
 import Collections from './pages/Collections';
 import Collection from './pages/Collection';
+import { CollectionsProvider } from "./context/CollectionsContext";
+
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/collections" element={<Collections />} />
-        <Route path="/collection" element={<Collection />} />
-      </Routes>
-    </BrowserRouter>
+      <div className='font-ubuntu'>
+        <CollectionsProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" exact element={<Dashboard />} />
+              <Route path="/collections" element={<Collections />} />
+              <Route path="/collection" element={<Collection />} />
+            </Routes>
+          </BrowserRouter>
+        </CollectionsProvider>
+      </div>
+
   );
 }
 

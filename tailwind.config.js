@@ -5,8 +5,8 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'body': "#CCBDE6",
-      'memorize': "#006DCD",
+      'body': "rgb(148 163 184)",
+      'memorize': "#004197",
       'white': "#fff"
     },
     extend: {},
